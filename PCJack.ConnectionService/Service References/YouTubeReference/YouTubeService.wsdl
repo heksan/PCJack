@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="YouTubeService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8082/youtube/meta?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8082/youtube/meta?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8082/youtube/meta?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ComputerHost.Objects" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IYouTubeService_OpenYoutube_InputMessage">
+    <wsdl:part name="parameters" element="tns:OpenYoutube" />
+  </wsdl:message>
+  <wsdl:message name="IYouTubeService_OpenYoutube_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OpenYoutubeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IYouTubeService_SearchForVideos_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchForVideos" />
+  </wsdl:message>
+  <wsdl:message name="IYouTubeService_SearchForVideos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchForVideosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IYouTubeService_GetVideos_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVideos" />
+  </wsdl:message>
+  <wsdl:message name="IYouTubeService_GetVideos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVideosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IYouTubeService_GetVideosN_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVideosN" />
+  </wsdl:message>
+  <wsdl:message name="IYouTubeService_GetVideosN_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVideosNResponse" />
+  </wsdl:message>
+  <wsdl:message name="IYouTubeService_ExitYouTube_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExitYouTube" />
+  </wsdl:message>
+  <wsdl:message name="IYouTubeService_ExitYouTube_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExitYouTubeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IYouTubeService_OpenVideo_InputMessage">
+    <wsdl:part name="parameters" element="tns:OpenVideo" />
+  </wsdl:message>
+  <wsdl:message name="IYouTubeService_OpenVideo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OpenVideoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IYouTubeService_Replay_InputMessage">
+    <wsdl:part name="parameters" element="tns:Replay" />
+  </wsdl:message>
+  <wsdl:message name="IYouTubeService_Replay_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReplayResponse" />
+  </wsdl:message>
+  <wsdl:message name="IYouTubeService_Back_InputMessage">
+    <wsdl:part name="parameters" element="tns:Back" />
+  </wsdl:message>
+  <wsdl:message name="IYouTubeService_Back_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BackResponse" />
+  </wsdl:message>
+  <wsdl:message name="IYouTubeService_PausePlay_InputMessage">
+    <wsdl:part name="parameters" element="tns:PausePlay" />
+  </wsdl:message>
+  <wsdl:message name="IYouTubeService_PausePlay_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PausePlayResponse" />
+  </wsdl:message>
+  <wsdl:message name="IYouTubeService_Next_InputMessage">
+    <wsdl:part name="parameters" element="tns:Next" />
+  </wsdl:message>
+  <wsdl:message name="IYouTubeService_Next_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NextResponse" />
+  </wsdl:message>
+  <wsdl:message name="IYouTubeService_GetTittle_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTittle" />
+  </wsdl:message>
+  <wsdl:message name="IYouTubeService_GetTittle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTittleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IYouTubeService_CloseYouTube_InputMessage">
+    <wsdl:part name="parameters" element="tns:CloseYouTube" />
+  </wsdl:message>
+  <wsdl:message name="IYouTubeService_CloseYouTube_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CloseYouTubeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IYouTubeService">
+    <wsdl:operation name="OpenYoutube">
+      <wsdl:input wsaw:Action="http://tempuri.org/IYouTubeService/OpenYoutube" message="tns:IYouTubeService_OpenYoutube_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IYouTubeService/OpenYoutubeResponse" message="tns:IYouTubeService_OpenYoutube_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchForVideos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IYouTubeService/SearchForVideos" message="tns:IYouTubeService_SearchForVideos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IYouTubeService/SearchForVideosResponse" message="tns:IYouTubeService_SearchForVideos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVideos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IYouTubeService/GetVideos" message="tns:IYouTubeService_GetVideos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IYouTubeService/GetVideosResponse" message="tns:IYouTubeService_GetVideos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVideosN">
+      <wsdl:input wsaw:Action="http://tempuri.org/IYouTubeService/GetVideosN" message="tns:IYouTubeService_GetVideosN_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IYouTubeService/GetVideosNResponse" message="tns:IYouTubeService_GetVideosN_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExitYouTube">
+      <wsdl:input wsaw:Action="http://tempuri.org/IYouTubeService/ExitYouTube" message="tns:IYouTubeService_ExitYouTube_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IYouTubeService/ExitYouTubeResponse" message="tns:IYouTubeService_ExitYouTube_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OpenVideo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IYouTubeService/OpenVideo" message="tns:IYouTubeService_OpenVideo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IYouTubeService/OpenVideoResponse" message="tns:IYouTubeService_OpenVideo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Replay">
+      <wsdl:input wsaw:Action="http://tempuri.org/IYouTubeService/Replay" message="tns:IYouTubeService_Replay_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IYouTubeService/ReplayResponse" message="tns:IYouTubeService_Replay_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Back">
+      <wsdl:input wsaw:Action="http://tempuri.org/IYouTubeService/Back" message="tns:IYouTubeService_Back_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IYouTubeService/BackResponse" message="tns:IYouTubeService_Back_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PausePlay">
+      <wsdl:input wsaw:Action="http://tempuri.org/IYouTubeService/PausePlay" message="tns:IYouTubeService_PausePlay_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IYouTubeService/PausePlayResponse" message="tns:IYouTubeService_PausePlay_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Next">
+      <wsdl:input wsaw:Action="http://tempuri.org/IYouTubeService/Next" message="tns:IYouTubeService_Next_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IYouTubeService/NextResponse" message="tns:IYouTubeService_Next_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTittle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IYouTubeService/GetTittle" message="tns:IYouTubeService_GetTittle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IYouTubeService/GetTittleResponse" message="tns:IYouTubeService_GetTittle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CloseYouTube">
+      <wsdl:input wsaw:Action="http://tempuri.org/IYouTubeService/CloseYouTube" message="tns:IYouTubeService_CloseYouTube_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IYouTubeService/CloseYouTubeResponse" message="tns:IYouTubeService_CloseYouTube_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="YouTubeService" type="tns:IYouTubeService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="OpenYoutube">
+      <soap:operation soapAction="http://tempuri.org/IYouTubeService/OpenYoutube" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchForVideos">
+      <soap:operation soapAction="http://tempuri.org/IYouTubeService/SearchForVideos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVideos">
+      <soap:operation soapAction="http://tempuri.org/IYouTubeService/GetVideos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVideosN">
+      <soap:operation soapAction="http://tempuri.org/IYouTubeService/GetVideosN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExitYouTube">
+      <soap:operation soapAction="http://tempuri.org/IYouTubeService/ExitYouTube" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenVideo">
+      <soap:operation soapAction="http://tempuri.org/IYouTubeService/OpenVideo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Replay">
+      <soap:operation soapAction="http://tempuri.org/IYouTubeService/Replay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Back">
+      <soap:operation soapAction="http://tempuri.org/IYouTubeService/Back" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PausePlay">
+      <soap:operation soapAction="http://tempuri.org/IYouTubeService/PausePlay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Next">
+      <soap:operation soapAction="http://tempuri.org/IYouTubeService/Next" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTittle">
+      <soap:operation soapAction="http://tempuri.org/IYouTubeService/GetTittle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CloseYouTube">
+      <soap:operation soapAction="http://tempuri.org/IYouTubeService/CloseYouTube" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IYouTubeService" type="tns:IYouTubeService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="OpenYoutube">
+      <soap:operation soapAction="http://tempuri.org/IYouTubeService/OpenYoutube" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchForVideos">
+      <soap:operation soapAction="http://tempuri.org/IYouTubeService/SearchForVideos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVideos">
+      <soap:operation soapAction="http://tempuri.org/IYouTubeService/GetVideos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVideosN">
+      <soap:operation soapAction="http://tempuri.org/IYouTubeService/GetVideosN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExitYouTube">
+      <soap:operation soapAction="http://tempuri.org/IYouTubeService/ExitYouTube" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenVideo">
+      <soap:operation soapAction="http://tempuri.org/IYouTubeService/OpenVideo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Replay">
+      <soap:operation soapAction="http://tempuri.org/IYouTubeService/Replay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Back">
+      <soap:operation soapAction="http://tempuri.org/IYouTubeService/Back" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PausePlay">
+      <soap:operation soapAction="http://tempuri.org/IYouTubeService/PausePlay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Next">
+      <soap:operation soapAction="http://tempuri.org/IYouTubeService/Next" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTittle">
+      <soap:operation soapAction="http://tempuri.org/IYouTubeService/GetTittle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CloseYouTube">
+      <soap:operation soapAction="http://tempuri.org/IYouTubeService/CloseYouTube" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="YouTubeService">
+    <wsdl:port name="YouTubeService" binding="tns:YouTubeService">
+      <soap:address location="http://localhost:8082/youtube/basic" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IYouTubeService" binding="tns:BasicHttpBinding_IYouTubeService">
+      <soap:address location="http://localhost:8082/192.168.0.27:8082/youtube/basic" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

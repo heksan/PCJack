@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:strings="clr-namespace:PCJack.Common;assembly=PCJack.Common"
+             x:Class="PCJack.Views.MainYouTubeView"
+             Title="YouTube"
+             x:Name="MainContext">
+    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Start"  Orientation="Horizontal">
+                <Entry x:Name="SearchEntry" HorizontalOptions="FillAndExpand" Placeholder="Search"></Entry>
+                <Button Text="Search" Command="{Binding Search}" CommandParameter="{Binding Source={x:Reference SearchEntry}, Path=Text}"></Button>
+            </StackLayout>
+            <StackLayout HorizontalOptions="FillAndExpand" IsVisible="{Binding IsPlayingPageOpened}" VerticalOptions="Start"  Orientation="Horizontal">
+                <Grid HorizontalOptions="FillAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20*"></ColumnDefinition>
+                        <ColumnDefinition Width="80*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label HorizontalOptions="Start" Text="Playing:" FontSize="Large"  Grid.Column="0"></Label>
+                    <Label HorizontalOptions="FillAndExpand" Text="{Binding CurrentVideoTitle}" LineBreakMode="TailTruncation" FontSize="Large"  Grid.Column="1"></Label>
+                </Grid>
+            </StackLayout>
+            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" IsVisible="{Binding IsPlayingPageOpened}">
+                <Image HorizontalOptions="FillAndExpand" Source="{Binding Source={Static strings:ApplicationStrings.PrevButtonImage}}">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding PreviousVideo}">
+                        </TapGestureRecognizer>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image HorizontalOptions="FillAndExpand" Source="{Binding Source={Static strings:ApplicationStrings.ReplayButtonImage}}">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding Replay}">
+                        </TapGestureRecognizer>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image HorizontalOptions="FillAndExpand" Source="{Binding PlayPauseImage}">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding PausePlay}">
+                        </TapGestureRecognizer>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image HorizontalOptions="FillAndExpand" Source="{Binding Source={Static strings:ApplicationStrings.NextButtonImage}}">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding NextVideo}">
+                        </TapGestureRecognizer>
+                    </Image.GestureRecognizers>
+                </Image>
+            </StackLayout>
+            <StackLayout IsVisible="{Binding IsPlayingPageOpened}" HorizontalOptions="FillAndExpand">
+                <Slider Maximum="100" Minimum="0" Value="{Binding VolumeValue}" HorizontalOptions="FillAndExpand"></Slider>
+            </StackLayout>
+        </StackLayout>
+        <ListView ItemsSource="{Binding VideosList, Mode=TwoWay}"
+            x:Name="MainList"
+            HasUnevenRows="False"
+            IsPullToRefreshEnabled="true"
+            CachingStrategy="RecycleElement"
+            IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+            RefreshCommand="{Binding RefreshDataCommand}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Grid HorizontalOptions="FillAndExpand">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="75*"></ColumnDefinition>
+                                    <ColumnDefinition Width="25*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding Title}" FontSize="Medium" HorizontalOptions="FillAndExpand" LineBreakMode="TailTruncation" Grid.Column="0"/>
+                                <Label Text="{Binding Length}" FontSize="Medium" HorizontalOptions="End" LineBreakMode="NoWrap" Grid.Column="1"/>
+                            </Grid>
+                            <Image Source="{Binding Source={Static strings:ApplicationStrings.PlayButtonImage}}" HorizontalOptions="End">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding BindingContext.PlayItem, Source={x:Reference Name=MainContext}}" CommandParameter="{Binding Title}">
+                                    </TapGestureRecognizer>
+                                </Image.GestureRecognizers>
+                            </Image>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

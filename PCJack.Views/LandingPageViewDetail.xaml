@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PCJack.Views.LandingPageViewDetail"
+             Title="Detail">
+    <StackLayout Padding="10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+            <Label VerticalTextAlignment="Center" Text="IP"></Label>
+            <Entry x:Name="ipEntry" HorizontalOptions="FillAndExpand" Text="{Binding IP, Mode=TwoWay}"></Entry>
+        </StackLayout>
+        <Button Text="Connect" Command="{Binding Connect}" CommandParameter="{Binding Source={x:Reference ipEntry}, Path=Text}" HorizontalOptions="FillAndExpand"></Button>
+    </StackLayout>
+</ContentPage>

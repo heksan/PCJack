@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="001214ae-c947-43cc-a0ac-704d1f4d40ac" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8082/youtube/meta" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="YouTubeService.wsdl" MetadataType="Wsdl" ID="aab8ed37-2d19-48f4-82e2-c30f0b4513b8" SourceId="1" SourceUrl="http://localhost:8082/youtube/meta" />
+    <MetadataFile FileName="meta.xsd" MetadataType="Schema" ID="7444b0d4-6809-449c-9627-5224f7dc1fff" SourceId="1" SourceUrl="http://localhost:8082/youtube/meta?xsd=xsd0" />
+    <MetadataFile FileName="meta1.xsd" MetadataType="Schema" ID="2418780c-52f7-4ab2-898a-74b354dbdeee" SourceId="1" SourceUrl="http://localhost:8082/youtube/meta?xsd=xsd2" />
+    <MetadataFile FileName="meta2.xsd" MetadataType="Schema" ID="cf314ce5-77ce-42d7-8fef-e0566636d127" SourceId="1" SourceUrl="http://localhost:8082/youtube/meta?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
