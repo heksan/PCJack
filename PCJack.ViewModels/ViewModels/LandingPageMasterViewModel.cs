@@ -45,7 +45,7 @@ namespace PCJack.ViewModels.ViewModels
             set
             {
                 OnPropertyChanged();
-                (value as MenuItem).Command.Execute(null);
+                (value as MenuItem).Command.Execute(null); 
             }
         }
     }

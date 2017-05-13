@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:strings="clr-namespace:PCJack.Common;assembly=PCJack.Common"
              x:Class="PCJack.Views.MainYouTubeView"
-             Title="YouTube"
+             Title="YouTube Remote"
              x:Name="MainContext">
     <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Start">
